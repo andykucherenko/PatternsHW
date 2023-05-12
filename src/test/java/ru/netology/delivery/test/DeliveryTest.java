@@ -26,7 +26,7 @@ public class DeliveryTest {
         $("[data-test-id=agreement]").click();
         $(".button").shouldHave(Condition.text("Запланировать")).click();
         //Проверка на видимость, содержание текста и время загрузки:
-        $("[data-test-id=success-notification]").shouldHave(Condition.appear)
+        $("[data-test-id=success-notification]").shouldHave(Condition.visible)
                 .shouldHave(Condition.text("Успешно! Встреча успешно запланирована на " + scheduledDate),
                         Duration.ofSeconds(15));
         //Изменение ранее введенной даты и отправка формы:
