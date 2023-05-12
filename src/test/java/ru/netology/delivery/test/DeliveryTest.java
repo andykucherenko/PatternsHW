@@ -31,7 +31,7 @@ public class DeliveryTest {
                         Duration.ofSeconds(15));
         //Изменение ранее введенной даты и отправка формы:
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE);
-        String rescheduledDate = DataGenerator.generateDate(14);   //Перенесенная дата (текущая дата + 14 дней)
+        String rescheduledDate = DataGenerator.generateDate(7);   //Перенесенная дата (текущая дата + 7 дней)
         $("[data-test-id=date] input").setValue(rescheduledDate);
         $(".button").shouldHave(Condition.text("Запланировать")).click();
         //Взаимодействие с опцией перепланировки,
