@@ -26,12 +26,12 @@ public class DeliveryTest {
         $("[data-test-id=agreement]").click();
         $(".button").shouldHave(Condition.text("Запланировать")).click();
         //Проверка на видимость, содержание текста и время загрузки:
-        $("[data-test-id=success-notification]").shouldBe(Condition.visible)
+        $("[data-test-id=success-notification]").shouldHave(Condition.appear)
                 .shouldHave(Condition.text("Успешно! Встреча успешно запланирована на " + scheduledDate),
                         Duration.ofSeconds(15));
         //Изменение ранее введенной даты и отправка формы:
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE);
-        String rescheduledDate = DataGenerator.generateDate(7);   //Перенесенная дата (текущая дата + 7 дней)
+        String rescheduledDate = DataGenerator.generateDate(14);   //Перенесенная дата (текущая дата + 14 дней)
         $("[data-test-id=date] input").setValue(rescheduledDate);
         $(".button").shouldHave(Condition.text("Запланировать")).click();
         //Взаимодействие с опцией перепланировки,
